@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.util.Log;
+
 public class HttpUtil {
 
 	public static void sendHttpRequest(final String address,
@@ -30,10 +32,12 @@ public class HttpUtil {
 					while ((line = reader.readLine()) != null) {
 						response.append(line);
 					}
+					Log.d(MyConfig.TAG, "Response--->"+response);
 					if (listener!=null) {
 						listener.onFinish(response.toString());
 					}
 				} catch (Exception e) {
+					Log.d(MyConfig.TAG, "Exception--->"+e);
 					e.printStackTrace();
 					if (listener!=null) {
 						listener.onError(e);
