@@ -20,7 +20,6 @@ public class HttpUtil {
 					connection = (HttpURLConnection) url.openConnection();
 					connection.setRequestMethod("GET");
 					connection.setDoInput(true);
-					connection.setDoOutput(true);
 					connection.setConnectTimeout(1000 * 8);
 					connection.setReadTimeout(1000 * 8);
 					InputStream in = connection.getInputStream();
